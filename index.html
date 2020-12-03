@@ -1,0 +1,43 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+
+</head>
+
+<body>
+    <div class="container">
+        <h2 class="text-center">TODOs List</h2>
+    </div>
+    <h2>HTML Forms</h2>
+
+    
+        <label for="fname" >First name:</label><br>
+        <input type="text" id="fname" name="fname" ><br>
+        <label for="lname">Last name:</label><br>
+        <input type="text" id="lname" name="lname" ><br><br>
+        <input type="submit" id="add" value="Submit">
+    
+
+    <p>If you click the "Submit" button, the form-data will be sent to a page called "/action_page.php".</p>
+    <script>
+           add.addEventListener("click", ()=>
+           {
+               console.log("updating list")
+               tit=document.getElementById('fname').value;
+               desc=document.getElementById('lname').value;
+               if (localStorage.getItem('itemsjson')==null){
+                   itemjsonArray=[];
+                   itemjsonArray.push([tit,desc]);
+                   localStorage.setItem('itemsjson', JSON.stringify(itemjsonArray))
+               }
+           })
+    </script>
+
+
+</body>
+
+</html>
