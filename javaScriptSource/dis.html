@@ -1,0 +1,19 @@
+<!-- Sprade Operator -->
+<script>
+    const Football={
+        playerId:1,
+        playerName:"Messi",
+        clubTeam:"Bercelona",
+    }
+   // console.log(Football.playerId);
+    //console.log(Football.playerName);
+    //console.log(Football.clubTeam);
+    
+    const Club={
+        teamId:1,
+        teamName:Football.clubTeam,
+        ...Football
+    }
+    console.log(Club);
+
+</script>

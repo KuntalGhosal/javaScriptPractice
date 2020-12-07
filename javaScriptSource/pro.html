@@ -1,0 +1,29 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+    <script type="text/javascript">
+        const Football={
+            playerId:1,
+            playerName:"Messi",
+            clubTeam:"Bercelona",
+        }
+       
+        const Club={
+            teamId:1,
+            teamName:Football.clubTeam,
+            ...Football
+        }
+        document.write(`${Club.teamId}`);
+        document.write(`${Club.teamName}`);
+        document.write(`${Football.playerId}`);
+        document.write(`${Football.playerName}`);
+        document.write(`${Football.clubTeam}`);
+        
+    </script>
+</body>
+</html>
