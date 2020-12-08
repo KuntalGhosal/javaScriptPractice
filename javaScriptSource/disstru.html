@@ -1,0 +1,24 @@
+
+                                       <!-- OBJECT DISTRUCTURING -->
+
+<script>
+    const Student={
+        studentId:1,
+        studentName:"Kuntal Ghosal",
+        studentDep:"CSE",
+        studentAge:21,
+        Hobb: {
+            first:"Playing Football",
+            sec:"Coding"
+        }
+    }
+    let {studentId:studentRoll,studentName,studentDep,studentAge,Hobb}=Student;
+  // let studentId,studentName,studentDep,studentAge;
+   //({studentId,studentName,studentDep,studentAge}=Student);
+    console.log(`StudentID is ${studentRoll}`);
+    console.log(`Student Name is ${studentName}`);
+    console.log(`Student Departmennt is ${studentDep}`);
+    console.log(`Student Age is ${studentAge}`);
+    console.log(`My Hobby is ${Hobb.first}`);
+    console.log(`My Second Hobby is ${Hobb.sec}`);
+</script>
