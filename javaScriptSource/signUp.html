@@ -21,6 +21,11 @@
             document.getElementById("message").style.display = 'block';
             return false;
          }
+         if (a.charAt(a.length-3)!='.'){
+            document.getElementById("message").innerHTML="input email is invalid";
+            document.getElementById("message").style.display = 'block';
+            return false;
+         }
       }
     //   console.log(`text is ${a}`);
     </script>
