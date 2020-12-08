@@ -9,24 +9,20 @@
 
 <body>
     <script>
-     function  signUp()  {
-         var a = document.getElementById('email').value;
-         if(a.indexOf('@')<=0){
-             document.getElementById("message").innerHTML="input email is invalid";
-            document.getElementById("message").style.display = 'block';
-             return false;
-         }
-         if (a.charAt(a.length-4)!="."){
-            document.getElementById("message").innerHTML="input email is invalid";
-            document.getElementById("message").style.display = 'block';
-            return false;
-         }
-         if (a.charAt(a.length-3)!='.'){
-            document.getElementById("message").innerHTML="input email is invalid";
-            document.getElementById("message").style.display = 'block';
-            return false;
-         }
-      }
+        function signUp() {
+            var a = document.getElementById('email').value;
+            if (a.indexOf('@') <= 0) {
+                document.getElementById("message").innerHTML = "input email is invalid";
+                document.getElementById("message").style.display = 'block';
+                return false;
+            }
+            if ((a.charAt(a.length - 4) != ".") && (a.charAt(a.length - 3) != ".")){
+                document.getElementById("message").innerHTML = "input email is invalid";
+                document.getElementById("message").style.display = 'block';
+                return false;
+            }
+          
+        }
     //   console.log(`text is ${a}`);
     </script>
     <form name="signUpForm" onsubmit="return signUp()">
@@ -41,12 +37,12 @@
             <p>Please fill in this form to create an account.</p>
             <hr>
             <div>
-                
-                
-               Email:<input id="email" type="text" placeholder="Enter a valid Email" name="Email"  value="" required>
-               <span id="message" style="display: none; color: red" ></span>
 
-               
+
+                Email:<input id="email" type="text" placeholder="Enter a valid Email" name="Email" value="" required>
+                <span id="message" style="display: none; color: red"></span>
+
+
             </div>
             <br />
             <div>
@@ -63,9 +59,9 @@
             <div>
                 <p>By creating an account you agree to our <a href="#" style="color:dodgerblue">Terms & Privacy</a>.</p>
             </div>
-            
-                <input  type="submit" value="submit" ></input>
-            
+
+            <input type="submit" value="submit"></input>
+
         </div>
     </form>
 </body>
