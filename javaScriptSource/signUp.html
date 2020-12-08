@@ -1,0 +1,68 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+
+<body>
+    <script>
+     function  signUp()  {
+         var a = document.getElementById('email').value;
+         if(a.indexOf('@')<=0){
+             document.getElementById("message").innerHTML="input email is invalid";
+            document.getElementById("message").style.display = 'block';
+             return false;
+         }
+         if (a.charAt(a.length-4)!="."){
+            document.getElementById("message").innerHTML="input email is invalid";
+            document.getElementById("message").style.display = 'block';
+            return false;
+         }
+      }
+    //   console.log(`text is ${a}`);
+    </script>
+    <form name="signUpForm" onsubmit="return signUp()">
+        <div class="container">
+            <style>
+                .container {
+                    text-align: center;
+                    justify-content: center;
+                }
+            </style>
+            <h1>Sign Up</h1>
+            <p>Please fill in this form to create an account.</p>
+            <hr>
+            <div>
+                
+                
+               Email:<input id="email" type="text" placeholder="Enter a valid Email" name="Email"  value="" required>
+               <span id="message" style="display: none; color: red" ></span>
+
+               
+            </div>
+            <br />
+            <div>
+                <label for="psw"><b>Password</b></label>
+                <input type="password" placeholder="Enter Password" name="psw" required>
+            </div>
+
+            <br />
+            <div>
+                <label>
+                    <input type="checkbox" checked="checked" name="remember" style="margin-bottom:15px"> Remember me
+                </label>
+            </div>
+            <div>
+                <p>By creating an account you agree to our <a href="#" style="color:dodgerblue">Terms & Privacy</a>.</p>
+            </div>
+            
+                <input  type="submit" value="submit" ></input>
+            
+        </div>
+    </form>
+</body>
+
+</html>
