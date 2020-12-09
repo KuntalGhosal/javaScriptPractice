@@ -4,24 +4,46 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Document</title>
+    <title>Form Validation</title>
 </head>
 
 <body>
     <script>
         function signUp() {
+            var status=true;
             var a = document.getElementById('email').value;
+            var b = document.getElementById("mobileNumber").value
             if (a.indexOf('@') <= 0) {
                 document.getElementById("message").innerHTML = "input email is invalid";
                 document.getElementById("message").style.display = 'block';
-                return false;
+                status= false;
             }
-            if ((a.charAt(a.length - 4) != ".") && (a.charAt(a.length - 3) != ".")){
+            if ((a.charAt(a.length - 4) != ".") && (a.charAt(a.length - 3) != ".")) {
                 document.getElementById("message").innerHTML = "input email is invalid";
                 document.getElementById("message").style.display = 'block';
-                return false;
+                status= false;
             }
-          
+            if (b.length === 0) {
+                document.getElementById("message1").innerHTML = "Empty Input Please Enter a valid Number"
+                document.getElementById("message1").style.display = 'block';
+                status= false;
+            }
+            if (isNaN(b)) {
+                document.getElementById("message1").innerHTML = "Input Mobile number should be numeric Value"
+                document.getElementById("message1").style.display = 'block';
+                status= false;
+            }
+            if (b.length<10) {
+                document.getElementById("message1").innerHTML = "Mobile number should be 10 digit"
+                document.getElementById("message1").style.display = 'block';
+                status= false;
+            }
+            if (b.length>10) {
+                document.getElementById("message1").innerHTML = "Mobile number should be 10 digit!!"
+                document.getElementById("message1").style.display = 'block';
+                return status;
+            }
+
         }
     //   console.log(`text is ${a}`);
     </script>
@@ -45,6 +67,9 @@
 
             </div>
             <br />
+            Mobile Number: <input type="text" placeholder="Enter the mobile number" id="mobileNumber" value="">
+            <span id="message1" style="display: none; color: red"></span>
+            <br /><br />
             <div>
                 <label for="psw"><b>Password</b></label>
                 <input type="password" placeholder="Enter Password" name="psw" required>
