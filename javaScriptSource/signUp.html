@@ -12,7 +12,8 @@
         function signUp() {
             var status=true;
             var a = document.getElementById('email').value;
-            var b = document.getElementById("mobileNumber").value
+            var b = document.getElementById("mobileNumber").value;
+            var c =document.getElementById("password").value;
             if (a.indexOf('@') <= 0) {
                 document.getElementById("message").innerHTML = "input email is invalid";
                 document.getElementById("message").style.display = 'block';
@@ -41,6 +42,11 @@
             if (b.length>10) {
                 document.getElementById("message1").innerHTML = "Mobile number should be 10 digit!!"
                 document.getElementById("message1").style.display = 'block';
+                status= false;
+            }
+            if(c.length<8) {
+                document.getElementById("message2").innerHTML = "password must be 8 digit"
+                document.getElementById("message2").style.display = 'block';
                 return status;
             }
 
@@ -72,7 +78,9 @@
             <br /><br />
             <div>
                 <label for="psw"><b>Password</b></label>
-                <input type="password" placeholder="Enter Password" name="psw" required>
+                <input type="password" placeholder="Enter Password" id="password" value="" required>
+                <span id="message2" style="display: none; color: red"></span>
+
             </div>
 
             <br />
